@@ -14,7 +14,7 @@ try:
     from transformers import pipeline
     import cv2
 except ImportError:
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "transformers", "torch", "pillow", "opencv-python", "streamlit"])
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "transformers", "torch", "pillow", "opencv-python-headless", "streamlit"])
     import torch
     from transformers import pipeline
     import cv2
@@ -322,14 +322,14 @@ with col1:
     <h1 class="hero-title">Is it real, or <span>AI-made?</span></h1>
     <p class="hero-sub">
         Get an instant machine learning signal on any image or video with the <strong>Organika/sdxl-detector</strong> model.
-        Fast, high-contrast, 100% private inference.
+        Fast, high-contrast inference on Streamlit Cloud.
     </p>
     """, unsafe_allow_html=True)
     
     st.markdown("""
     <div style="display: flex; gap: 2rem; margin-top: 2rem; font-size: 0.9rem; font-weight: 700; color: #10b981;">
         <div>✳ Simple image check</div>
-        <div>🔒 Private by design</div>
+        <div>☁ Hosted processing</div>
         <div>⚡ Fast CPU/GPU inference</div>
     </div>
     """, unsafe_allow_html=True)
@@ -345,7 +345,7 @@ with col2:
     else:
         uploaded_file = st.file_uploader("Upload Video (MP4, WEBM, MOV)", type=["mp4", "webm", "mov", "avi"])
 
-    st.markdown('<div style="margin-top: 1rem; text-align: center; font-size: 0.8rem; color: #64748b;">🔒 Media processed locally in PyTorch pipeline</div>', unsafe_allow_html=True)
+    st.markdown('<div style="margin-top: 1rem; text-align: center; font-size: 0.8rem; color: #64748b;">☁ Uploaded media is processed on Streamlit's server</div>', unsafe_allow_html=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
 # ANALYSIS ENGINE RUNNER
