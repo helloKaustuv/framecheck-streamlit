@@ -345,7 +345,7 @@ with col2:
     else:
         uploaded_file = st.file_uploader("Upload Video (MP4, WEBM, MOV)", type=["mp4", "webm", "mov", "avi"])
 
-    st.markdown('<div style="margin-top: 1rem; text-align: center; font-size: 0.8rem; color: #64748b;">☁ Uploaded media is processed on Streamlit's server</div>', unsafe_allow_html=True)
+    st.markdown('<div style="margin-top: 1rem; text-align: center; font-size: 0.8rem; color: #64748b;">☁ Uploaded media is processed on the Streamlit server</div>', unsafe_allow_html=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
 # ANALYSIS ENGINE RUNNER
